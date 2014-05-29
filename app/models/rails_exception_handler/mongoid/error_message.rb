@@ -1,5 +1,6 @@
 class RailsExceptionHandler::Mongoid
   class ErrorMessage
+    include ::RailsExceptionHandler::PrettyData
     #if(defined?(Mongoid) && RailsExceptionHandler.configuration.activate? && RailsExceptionHandler.configuration.mongoid?)
     if defined?(Mongoid)
       include Mongoid::Document

@@ -6,8 +6,19 @@
   <% for type in @summary.keys -%>
     <div class="tab-pane" id="<%= type %>">
       <table class="table-striped table table-bordered table-hover">
-        <% for ex in @summary[type] -%>
-          <tr><td> <%= ex.message %></td></tr>
+        <tr>
+          <th>Date</th>
+          <th>User Agent</th>
+          <th>Username</th>
+          <th>URL</th>
+        </tr>
+        <% for ex in @summary[type].reverse -%>
+        <tr>
+          <td class="col-md-2"> <%= ex.updated_at.strftime('%d %b %Y %H:%M:%S') %></td>
+          <td class="col-md-2"> <%= ex.user_agent_pretty %></td>
+          <td class="col-md-1"> <%= ex.user_info %></td>
+          <td> <%= ex.target_url %></td>
+        </tr>
         <%- end %>
       </table>
     </div>
