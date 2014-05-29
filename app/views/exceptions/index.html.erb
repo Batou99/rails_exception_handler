@@ -1,3 +1,16 @@
-<%- for ex in @exs do %>
-  One exception <br/>
+<%= render partial: 'sidebar' %>
+<div class="tab-content col-md-9">
+  <% for type in @summary.keys -%>
+    <div class="tab-pane" id="<%= type %>">
+      <% for ex in @summary[type] -%>
+        <%= ex.message %><br/>
+      <%- end %>
+    </div>
 <% end -%>
+</div>
+
+<script type="text/javascript">
+  $('.exception_type:first').addClass('active');
+  $('.tab-pane:first').addClass('active');
+</script>
+

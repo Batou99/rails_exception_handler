@@ -1,0 +1,7 @@
+<div class="col-md-3">
+  <ul class="nav nav-pills nav-stacked">
+    <%- for type in @summary.keys %>
+      <li class="exception_type"><a data-toggle="tab" href="#<%= type %>"><%= type %> <span class="badge pull-right"><%= @summary[type].size %></span></a></li>
+  <% end -%>
+  </ul>
+</div>
