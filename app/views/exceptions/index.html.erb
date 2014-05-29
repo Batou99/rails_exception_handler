@@ -1,10 +1,15 @@
+<div class="col-md-12">
+  <h1 class="text-center"> List exceptions </h1>
+</div>
 <%= render partial: 'sidebar' %>
 <div class="tab-content col-md-9">
   <% for type in @summary.keys -%>
     <div class="tab-pane" id="<%= type %>">
-      <% for ex in @summary[type] -%>
-        <%= ex.message %><br/>
-      <%- end %>
+      <table class="table-striped table table-bordered table-hover">
+        <% for ex in @summary[type] -%>
+          <tr><td> <%= ex.message %></td></tr>
+        <%- end %>
+      </table>
     </div>
 <% end -%>
 </div>
